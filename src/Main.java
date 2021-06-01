@@ -51,6 +51,7 @@ public class Main {
 		  DataBase.connexion(); 
 		  double[] list = DataBaseStat.getRapport();
 		  System.out.println("Salut Martin la ptite quequette");
+		  System.out.println("Salut Hugo");
 		  
 		  
 		  DataBase.closeDataBase();
