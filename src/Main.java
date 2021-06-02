@@ -45,16 +45,18 @@ import ihm.Fenetre;
 public class Main {
 
 	public static void main(String[] args) {
-		//Fenetre uFenetre = new Fenetre();  
+		Fenetre uFenetre = new Fenetre();  
 		
 		
-		  DataBase.connexion(); 
-		  double[] list = DataBaseStat.getRapport();
-		  System.out.println("Salut Martin la ptite quequette");
-		  System.out.println("Salut Hugo");
-		  
-		  
-		  DataBase.closeDataBase();
+		
+		/*
+		 * DataBase.connexion(); double[] list = DataBaseStat.getRapport();
+		 * 
+		 * 
+		 * 
+		 * DataBase.closeDataBase();
+		 */
+		 
 		 
 
 		/*

@@ -63,11 +63,11 @@ public class Embryons {
 		this.numDossier = numDossier;
 		this.numStimulation = numStimulation;
 		this.dateNaissancePatiente = dateNaissancePatiente ;
-		this.dateNaissancePatienteString = new SimpleDateFormat("yyyy-MM-dd").format(dateNaissancePatiente);
+		//this.dateNaissancePatienteString = new SimpleDateFormat("yyyy-MM-dd").format(dateNaissancePatiente);
 		this.typeAmp = typeAmp;
 		this.nbrEmbryons = nbrEmbryons;
 		this.datePonction = datePonction;
-		this.datePonctionString = new SimpleDateFormat("yyyy-MM-dd").format(datePonction);
+		//this.datePonctionString = new SimpleDateFormat("yyyy-MM-dd").format(datePonction);
 		this.ageDebut = ageDebut;
 		this.decision = decision;
 		this.decisionNbJourObservation = decisionNbJourObservation;
