@@ -98,4 +98,73 @@ public class DataBaseStat extends DataBase {
 		return false;
 	}
 
+	
+	@SuppressWarnings("rawtypes")
+	public static ArrayList[] biologist() {
+		String query = "select biologist_transfert, grossesse_abm from fiv";
+		ArrayList<String> biologistTransfert = new ArrayList<String>();
+		ArrayList<String> grossesseAbm = new ArrayList<String>();
+		
+		try {
+			Statement statement = connecteur.createStatement();
+			java.sql.ResultSet res = statement.executeQuery(query);
+			
+			while (res.next()) {
+				biologistTransfert.add(res.getString(1));
+				grossesseAbm.add(res.getString(2));
+			}
+			statement.close();
+			
+			ArrayList<String> nomBiologist = new ArrayList<String>();
+			ArrayList<Integer> nbrApparition = new ArrayList<Integer>();
+			ArrayList<Integer> nbrGrossesse = new ArrayList<Integer>();
+			
+			for(int i=0; i< biologistTransfert.size(); i++) {
+				if(nomBiologist.contains(biologistTransfert.get(i))) {
+					int place = nomBiologist.indexOf(biologistTransfert.get(i));
+					nbrApparition.set(place,  nbrApparition.get(place) + 1);
+					nbrGrossesse.set(place, nbrGrossesse.get(place) + 1);
+				}
+				else {
+					nomBiologist.add(biologistTransfert.get(i));
+					nbrApparition.add(1);
+					nbrGrossesse.add(1);
+				} 	
+			}
+			
+			int somme = 0;
+			for(int i=0; i<nbrApparition.size();i++) {
+				somme += nbrApparition.get(i);
+			}
+			
+			ArrayList<Double> rapportApparitionBiologiste = new ArrayList<Double>();
+			ArrayList<Double> rapportGrossesseBiologiste = new ArrayList<Double>();
+			
+			for(int i=0; i<nomBiologist.size(); i++) {
+				try {
+					rapportApparitionBiologiste.add( Math.round(( nbrApparition.get(i)/ somme)*100.0)/100.0);
+				} catch (java.lang.ArithmeticException e) {
+					rapportApparitionBiologiste.add(0.0);
+				}
+				try {
+					rapportGrossesseBiologiste.add( Math.round(( nbrGrossesse.get(i)/ nbrApparition.get(i))*100.0)/100.0);
+				} catch (java.lang.ArithmeticException e) {
+					rapportGrossesseBiologiste.add(0.0);
+				}
+				System.out.println(rapportApparitionBiologiste.get(i));
+				System.out.println(rapportGrossesseBiologiste.get(i));
+
+			}
+			
+			return new ArrayList[] {rapportApparitionBiologiste, rapportGrossesseBiologiste};
+			
+			
+			
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return null;
+			
+		}
+	}
 }
