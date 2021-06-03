@@ -29,6 +29,7 @@ import databases.DataBaseEmbryons;
 import databases.DataBaseFiv;
 import databases.DataBaseGeri;
 import databases.DataBaseStat;
+import databases.DataBaseStat2;
 import databases.DataBaseTec;
 import entities.Embryons;
 import entities.Fiv;
@@ -49,13 +50,21 @@ public class Main {
 		
 		
 		
+
+		
+		
 		/*
-		 * DataBase.connexion(); double[] list = DataBaseStat.getRapport();
+		 * DataBase.connexion(); System.out.println(DataBaseStat2.arrondi((double)
+		 * 1/2)); DataBaseStat2.getStat(); DataBaseStat2.display();
 		 * 
 		 * 
 		 * 
 		 * DataBase.closeDataBase();
 		 */
+		 
+		 
+		 
+		 
 		 
 		 
 

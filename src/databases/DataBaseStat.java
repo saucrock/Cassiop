@@ -57,17 +57,17 @@ public class DataBaseStat extends DataBase {
 			double rapportIcsi;
 			double rapportTotal;
 			try {
-				rapportFiv =Math.round((SMetaFiv / SovoFiv)*100.0)/100.0;
+				rapportFiv =Math.round((SovoFiv / SMetaFiv)*100.0)/100.0;
 			} catch (java.lang.ArithmeticException e) {
 				rapportFiv = 0;
 			}
 			try {
-				rapportIcsi = Math.round((SMetaIcsi / SovoIcsi)*100.0)/100.0;
+				rapportIcsi = Math.round((SovoIcsi/SMetaIcsi)*100.0)/100.0;
 			} catch (java.lang.ArithmeticException e) {
 				rapportIcsi = 0;
 			}
 			try {
-				rapportTotal = Math.round(((SMetaFiv + SMetaIcsi) / (SovoFiv + SovoIcsi))*100.0)/100.0;
+				rapportTotal = Math.round(((SovoFiv + SovoIcsi) / (SMetaFiv + SMetaIcsi))*100.0)/100.0;
 			} catch (java.lang.ArithmeticException e) {
 				rapportTotal = 0;
 			}

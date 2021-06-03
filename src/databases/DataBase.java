@@ -147,6 +147,7 @@ public class DataBase {
 				java.sql.ResultSet res = statement.executeQuery(query);
 				res.next();
 				quantities.add(res.getInt(1));
+				statement.close();
 				
 
 			} catch (SQLException e) {
@@ -165,6 +166,7 @@ public class DataBase {
 			java.sql.ResultSet res = statement.executeQuery(query);
 			res.next();
 			int alors = res.getInt(1);
+			statement.close();
 			if (alors == 0) {
 				return false;
 			} else {

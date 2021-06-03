@@ -110,6 +110,7 @@ public class ExcelEmbryons extends Excel {
 	public ArrayList<Integer> getIntElement(int index) {
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		for (int e : indiceInt) {
+			System.out.println("indice " + e);
 			try {
 				list.add((int) this.dataSheet.getRow(index).getCell(e).getNumericCellValue());
 			}
@@ -170,8 +171,8 @@ public class ExcelEmbryons extends Excel {
 		String typeAmp = listString.get(0);
 		String decision = listString.get(1);
 		String J0StdMaturInjection = listString.get(2);
-		String J1NbGp = listString.get(3);
-		String J1NbPn = listString.get(4);
+		String J1NbGp = listString.get(6);
+		String J1NbPn = listString.get(7);
 		String J2TypiqueAtypique = listString.get(5);
 		String J2Fragmentation = listString.get(6);
 		String J5Blastomere = listString.get(7);

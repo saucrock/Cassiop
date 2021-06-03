@@ -39,14 +39,24 @@ public class DataBaseEmbryons extends DataBase {
 			preparedStatement.setObject(2, embryon.getNumDossier());
 			preparedStatement.setObject(3, embryon.getNumStimulation());
 			
-			String t = new SimpleDateFormat("yyyy-MM-dd").format(embryon.getDateNaissancePatiente());
-			preparedStatement.setObject(4, t);
+			try {
+				
+			
+				String t = new SimpleDateFormat("yyyy-MM-dd").format(embryon.getDateNaissancePatiente());
+				preparedStatement.setObject(4, t);
+				
+			} catch (NullPointerException e) {
+				preparedStatement.setObject(4, null);
+			}
 			
 			preparedStatement.setObject(5, embryon.getTypeAmp());
 			preparedStatement.setObject(6, embryon.getNbrEmbryons());
-			
-			String t2 = new SimpleDateFormat("yyyy-MM-dd").format(embryon.getDatePonction());
-			preparedStatement.setObject(7, t2);
+			try {
+				String t2 = new SimpleDateFormat("yyyy-MM-dd").format(embryon.getDatePonction());
+				preparedStatement.setObject(7, t2);
+			} catch (NullPointerException e) {
+				preparedStatement.setObject(7, null);
+			}
 			
 			preparedStatement.setObject(8, embryon.getAgeDebut());
 			preparedStatement.setObject(9, embryon.getDecision());

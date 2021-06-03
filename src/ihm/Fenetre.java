@@ -38,6 +38,7 @@ public class Fenetre extends JFrame implements ActionListener {
 	Bouton boutonConsulter = new Bouton("Consulter");
 	Bouton boutonAjouter = new Bouton("Ajouter");
 	Bouton boutonSupprimer = new Bouton("Supprimer");
+	Bouton boutonStatistique = new Bouton("Statistique");
 	ImageIcon icone = new ImageIcon(getClass().getResource("Logo_HOPITAL_FOCH.png"));
 	JLabel image = new JLabel(icone);
 	JPanel pan2 = new JPanel();
@@ -78,14 +79,16 @@ public class Fenetre extends JFrame implements ActionListener {
 		boutonConsulter.addActionListener(this);
 		boutonAjouter.addActionListener(this);
 		boutonSupprimer.addActionListener(this);
+		boutonStatistique.addActionListener(this);
 
 		
 		
 		
-		pan2.setLayout(new GridLayout(3,1));
+		pan2.setLayout(new GridLayout(4,1));
 		pan2.add(boutonConsulter);
 		pan2.add(boutonAjouter);
 		pan2.add(boutonSupprimer);
+		pan2.add(boutonStatistique);
 		
 		pan3.setLayout(new BorderLayout());
 		pan3.add(image, BorderLayout.SOUTH);
@@ -140,7 +143,11 @@ public class Fenetre extends JFrame implements ActionListener {
 		} else if (arg0.getSource() == boutonConsulter) {
 			boutonConsulter();
 
+		} else if (arg0.getSource() == boutonStatistique) {
+			boutonStat();
 		}
+		
+	
 	}
 	
 	public static void updateQuantities() {
@@ -162,6 +169,11 @@ public class Fenetre extends JFrame implements ActionListener {
 	  public void boutonConsulter() { 
 
 		  FenetreListFiv affFivs = new FenetreListFiv(this, DataBaseFiv.getFivs("select * from fiv;"));
+		  
+	  }
+	  
+	  public void boutonStat() {
+		  FenetreStat.seeStat(this);
 		  
 	  }
 	 
