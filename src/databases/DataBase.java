@@ -15,10 +15,13 @@ import com.mysql.jdbc.ResultSet;
 
 public class DataBase {
 
-	static String BDD = "hopital";
+	//static String BDD = "hopital";
+	static String BDD = "cassiopee";
 	static String url = "jdbc:mysql://localhost/" + BDD + "?characterEncoding=utf8&useSSL=false&useUnicode=true";
-	static String user = "saucrock";
-	static String passwd = "carnot75016";
+	//static String user = "saucrock";
+	//static String passwd = "carnot75016";
+	static String user = "student";
+	static String passwd = "password";
 	
 
 	static Connection connecteur;
