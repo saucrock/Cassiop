@@ -70,22 +70,30 @@ public class FenetreStat extends JDialog {
 		for (String e: listAttributName) {
 			listAttribut.add(new Label(e));
 		}
+		
+		String taux1 = "" +DataBaseStat2.getTaux_fecondation_consensus();
+		String taux2 = "" +DataBaseStat2.getTaux_fecondation_mmi();
+		String taux3 = "" +DataBaseStat2.getTaux_3PN();
+		String taux4 = "" +DataBaseStat2.getTaux_1PN();
+		String taux5 = "" +DataBaseStat2.getmII_p100();
+		String taux6 = "" +DataBaseStat2.getTaux_0PN();
+		String taux7 = "" +DataBaseStat2.getTaux_echec_fecondation();
 	
 		listValeur.add(new AttributLabel("" +DataBaseStat2.getNb_Stimulation()));
 		listValeur.add(new AttributLabel("" +DataBaseStat2.getNb_cco_insemine()));
 		listValeur.add(new AttributLabel("" +DataBaseStat2.getmII_24()));
-		listValeur.add(new AttributLabel("" +DataBaseStat2.getmII_p100()  + " %"));
+		listValeur.add(new AttributLabel( taux5.substring(0, Math.min(4,  taux5.length())) + " %"));
 		listValeur.add(new AttributLabel("" +DataBaseStat2.getpN2_24()));
-		listValeur.add(new AttributLabel("" +DataBaseStat2.getTaux_fecondation_consensus() + " %"));
-		listValeur.add(new AttributLabel("" +DataBaseStat2.getTaux_fecondation_mmi()  + " %"));
+		listValeur.add(new AttributLabel( taux1.substring(0, Math.min(4,  taux1.length())) + " %"));
+		listValeur.add(new AttributLabel( taux2.substring(0,Math.min(4,  taux2.length()))  + " %"));
 		listValeur.add(new AttributLabel("" +DataBaseStat2.getpN3_24()));
-		listValeur.add(new AttributLabel("" +DataBaseStat2.getTaux_3PN()  + " %"));
+		listValeur.add(new AttributLabel(  taux3.substring(0,Math.min(4,  taux3.length())) + " %"));
 		listValeur.add(new AttributLabel("" +DataBaseStat2.getpN1_24()));
-		listValeur.add(new AttributLabel("" +DataBaseStat2.getTaux_1PN()  + " %"));
+		listValeur.add(new AttributLabel(  taux4.substring(0,Math.min(4,  taux4.length())) + " %"));
 		listValeur.add(new AttributLabel("" +DataBaseStat2.getpN0_24()));
-		listValeur.add(new AttributLabel("" +DataBaseStat2.getTaux_0PN()  + " %"));
+		listValeur.add(new AttributLabel( taux6.substring(0, Math.min(4,  taux6.length())) + " %"));
 		listValeur.add(new AttributLabel("" +DataBaseStat2.getNb_Echec()));
-		listValeur.add(new AttributLabel("" +DataBaseStat2.getTaux_echec_fecondation()  + " %"));
+		listValeur.add(new AttributLabel( taux7.substring(0, Math.min(4,  taux7.length())) + " %"));
 	}
 	
 	public Color colorConsensus(double a) {

@@ -26,7 +26,7 @@ public class DataBaseEmbryons extends DataBase {
     	
     	try {
     		System.out.println("Ouverture Statement");
-			PreparedStatement preparedStatement = connecteur.prepareStatement("INSERT INTO Embryons VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+			PreparedStatement preparedStatement = connecteur.prepareStatement("INSERT INTO Embryons VALUES(NULL, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
 					/*+ " (id,  Num_dossier,  Num_stimulation,  Date_naissance_patiente,  Type_AMP, Nbr_embryons," + 
 					"Date_ponction,  Age_Debut, Decision,  Decision_nb_jour_observation, "
 					+ "J0_std_matur_injection,  J1_nb_GP," + 
@@ -107,7 +107,8 @@ public class DataBaseEmbryons extends DataBase {
 			// TODO Auto-generated catch block
 			System.out.println("Echec ...");
 			e.printStackTrace();
-			return -1;
+			return 0;
+		
 		}
    
     }
@@ -117,7 +118,8 @@ public class DataBaseEmbryons extends DataBase {
 		System.out.println("Ajout des embryons ...");
 		int s = 0;
 		for (Embryons e : list) {
-			s += insertEmbryons(e);
+			if (e != null)
+				s += insertEmbryons(e);
 		}
 		System.out.println("Ajout terminé");
 		
@@ -134,8 +136,11 @@ public static ArrayList<Embryons> getEmbryons(String s) {
 			
 			
 			while (res.next()) {
-				int[] indiceInteger = {1, 2, 3, 6, 8, 10, 15, 25, 28, 29};
-				int[] indiceString = {4, 5, 7, 9, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26, 27, 30, 31, 32, 33};
+				
+				
+				int[] indiceInteger = {2, 3, 4, 7, 9, 11, 16, 26, 29, 30}; 
+				int[] indiceString = {5, 6, 8, 10, 12, 13, 14, 15, 17, 18, 19 ,20, 21, 22, 23, 24, 25, 27, 28, 31, 32, 33, 34};
+				
 				ArrayList<Integer> a = new ArrayList<Integer>();
 				ArrayList<String> b = new ArrayList<String>();
 				

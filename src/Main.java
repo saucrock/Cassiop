@@ -49,7 +49,15 @@ public class Main {
 		Fenetre uFenetre = new Fenetre();  
 		
 		
+		//ExcelEmbryons a = new ExcelEmbryons("/home/martin/Téléchargements/EMB_MF_année 2020.xlsx");
 		
+		
+		
+		
+		
+		//ArrayList<Embryons> list = a.getListEmbryons();
+		
+		//System.out.println(list.size());
 
 		
 		
