@@ -17,7 +17,7 @@ public class ExcelEmbryons extends Excel {
 	
 	int [] indiceDate = {2, 7};
 	int [] indiceInt = {4, 14, 17, 64, 257, 264, 273};
-	int [] indiceString = {3, 16, 20, 23, 26, 27, 44, 45, 63, 68, 179, 185, 186, 187, 217, 223, 224, 225, 256, 258, 263};
+	int [] indiceString = {3, 16, 23, 44, 45, 63, 68, 179, 185, 186, 187, 217, 223, 224, 225, 258, 263, 20, 26, 27, 256};
 	
 	
 	public ExcelEmbryons (String s){
@@ -171,8 +171,11 @@ public class ExcelEmbryons extends Excel {
 		String typeAmp = listString.get(0);
 		String decision = listString.get(1);
 		String J0StdMaturInjection = listString.get(2);
-		String J1NbGp = listString.get(6);
-		String J1NbPn = listString.get(7);
+		String technicien1Decoronisation = listString.get(17);
+		String J0TypeMicroInjection = listString.get(18);
+		String JOTechnicien1 = listString.get(19);
+		String J1NbGp = listString.get(3);
+		String J1NbPn = listString.get(4);
 		String J2TypiqueAtypique = listString.get(5);
 		String J2Fragmentation = listString.get(6);
 		String J5Blastomere = listString.get(7);
@@ -183,12 +186,11 @@ public class ExcelEmbryons extends Excel {
 		String J6Blastocyste = listString.get(12);
 		String J6Icm = listString.get(13);
 		String J6Tropho = listString.get(14);
+		String techCongTechnicien = listString.get(20);
 		String typeAmpGrossesse = listString.get(15);
 		String Grossesse = listString.get(16);
-		String technicien1Decoronisation = listString.get(17);
-		String J0TypeMicroInjection = listString.get(18);
-		String JOTechnicien1 = listString.get(19);
-		String techCongTechnicien = listString.get(20);
+
+
 		
 		Embryons result = new Embryons( id,  numDossier,  numStim,  dateNaissancePatiente,  typeAmp, nbrEmbryons, 
 				 datePonction,  ageDebut,  decision,  decisionNbJourObservation,  J0StdMaturInjection,  J1NbGp, 
